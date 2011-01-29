@@ -27,7 +27,7 @@ Rails::Initializer.run do |config|
   config.gem "nokogiri"
   config.gem "stemmer"
   config.gem "authlogic"
-  config.gem "newrelic_rpm"
+#  config.gem "newrelic_rpm"
   config.gem "feedzirra"
   
 
