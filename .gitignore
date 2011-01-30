@@ -5,3 +5,4 @@ tmp
 .DS_Store
 public/stylesheets/application.css
 *.swp
+config/database.yml

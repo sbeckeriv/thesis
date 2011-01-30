@@ -19,6 +19,16 @@ class ClassificationsController < ApplicationController
       format.js { render :json => true }
     end
   end
+  
+  def classify
+     entry = Entry.find(params[:id])
+     @current_user.classify_entry(params[:classify],entry)
+     respond_to do |format|
+      format.js { render :json => true }
+    end
+
+  end
+
 
   #scaffolded, will prolly use later. Not routed to atm.
 

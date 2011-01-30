@@ -70,6 +70,10 @@ function Magazine() {
         disliked($(this).val(), $(this));
       });
 
+    $(".classify").change(function(e) {
+        classify($(this).val(), this.attributes.getNamedItem("data-entry_id").value);
+      });
+
     $(".delicious").click(function(e) {
       e.preventDefault();
     });
@@ -120,6 +124,13 @@ function Magazine() {
       }); 
     register_callbacks();
   }
+  function classify(value, entity_id)
+  {
+    $.post('/entries/' + entity_id + "/classify?classify="+value, function(data) {
+//button.replaceWith("<b>"+value+"</b>");
+      });
+  }
+
 
   function liked(value, button)
   {

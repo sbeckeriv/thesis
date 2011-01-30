@@ -21,6 +21,7 @@ class Classifimicator
 
     when NAIVE
       require 'naive_bayes'
+
       @classifier = NaiveBayes.new(["signal", "noise"], threshold)
 
     when CLASSIFIER

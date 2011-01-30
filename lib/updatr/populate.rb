@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
-require File.expand_path('../../../config/environment',  __FILE__)
+require File.expand_path(File.join('..','..','..','config','environment'),  __FILE__)
 require File.dirname(__FILE__) + '/feeds'
 require File.dirname(__FILE__) + '/stream'
-
+require 'stemmer/porter' 
 puts RAILS_ENV
 
 # cmdline option, 'debug' will log more & will not sleep.

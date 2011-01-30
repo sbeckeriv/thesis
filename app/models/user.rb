@@ -54,6 +54,10 @@ class User < ActiveRecord::Base
     
     return !an_opinion["liked"]
   end
+  def classify_entry(value,entry)
+    classify_name(value, entry.id)
+
+  end
 
 
   def liked!(entry)
@@ -104,6 +108,13 @@ class User < ActiveRecord::Base
   def set_modifier
     self.modifier = '1'
   end
+  def classify_name( val, entry_id)
+    c = Classification.find_or_create_by_entry_id(entry_id)
+    c.user = self
+    c['name'] = val
+    c.save!
+  end
+
   def classify(attribute, val, entry_id)
     c = Classification.find_or_create_by_entry_id(entry_id)
     c.user = self
