@@ -5,3 +5,5 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+SubscriptionsUsers.connection.execute("update subscriptions_users set created_at = '2010-05-01 00:00:00' where created_at is null")
+
